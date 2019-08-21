@@ -1,3 +1,4 @@
-class DockingStation 
-
-end 
+class DockingStation
+  def release_bike(username)
+  end
+end
