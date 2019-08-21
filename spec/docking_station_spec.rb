@@ -9,6 +9,8 @@ describe DockingStation do
   end
 
   describe "instance implements" do
+
+
     it "release_bike" do
       expect(DockingStation.new).to respond_to(:release_bike)
     end
@@ -32,4 +34,13 @@ describe DockingStation do
     station = DockingStation.new
      expect { station.release_bike }.to raise_error "No bikes available"
   end
+
+  it "Raises an error when more than one bike docked" do
+    station = DockingStation.new
+    bike = Bike.new
+    another_bike = Bike.new
+    station.dock_bike(bike)
+    expect { station.dock_bike(another_bike)}.to raise_error "Station full!"
+  end
+
 end
