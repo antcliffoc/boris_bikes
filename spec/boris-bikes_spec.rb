@@ -11,7 +11,12 @@ describe DockingStation do
   describe "instance implements" do
     it "release_bike" do
       expect(DockingStation.new).to respond_to(:release_bike)
-    end  
+    end
+  end
+
+  it 'gets a bike' do
+    bike = Bike.new
+    expect(bike.working?).to be true
   end
 
 end
