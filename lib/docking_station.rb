@@ -11,7 +11,7 @@ class DockingStation
   end
 
   def release_bike
-    return @bike_array[0]
+    raise "No bikes available" unless !@bike_array.empty?
   end
 
   def dock_bike(new_bike)
