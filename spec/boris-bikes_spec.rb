@@ -11,12 +11,7 @@ describe DockingStation do
   describe "instance implements" do
     it "release_bike" do
       expect(DockingStation.new).to respond_to(:release_bike)
-    end
-
-    it "with at least one argument" do
-      expect(DockingStation.new).to respond_to(:release_bike).with(1).arguments
-    end
-    
+    end  
   end
 
 end
