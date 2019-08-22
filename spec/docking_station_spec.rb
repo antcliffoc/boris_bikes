@@ -42,13 +42,13 @@ describe DockingStation do
   it "can set a capacity" do
     ds = DockingStation.new(10)
     10.times { ds.dock_bike(Bike.new)}
-    expect { subject.dock_bike(Bike.new)}.to raise_error "Station full!"
+    expect { ds.dock_bike(Bike.new)}.to raise_error "Station full!"
   end
 
   it "defaults to DEFAULT_CAPACITY" do
     ds = DockingStation.new
     20.times { ds.dock_bike(Bike.new)}
-    expect { subject.dock_bike(Bike.new)}.to raise_error "Station full!"
+    expect { ds.dock_bike(Bike.new)}.to raise_error "Station full!"
   end
 
 end
