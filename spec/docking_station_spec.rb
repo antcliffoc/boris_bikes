@@ -2,16 +2,13 @@ require './lib/docking_station'
 
 describe DockingStation do
 
+  it "creates a new docking station object" do
+    expect(DockingStation.new).to be_instance_of DockingStation
+  end
 
-    it "creates a new docking station object" do
-      expect(DockingStation.new).to be_instance_of DockingStation
-    end
-
-
-    it "release_bike" do
-      expect(DockingStation.new).to respond_to(:release_bike)
-    end
-
+  it "release_bike" do
+    expect(DockingStation.new).to respond_to(:release_bike)
+  end
 
   it 'gets a bike' do
     bike = Bike.new
@@ -29,7 +26,7 @@ describe DockingStation do
 
   it "Raise error when no bikes" do
     station = DockingStation.new
-     expect { station.release_bike }.to raise_error "No bikes available"
+    expect { station.release_bike }.to raise_error "No bikes available"
   end
 
   it "Raises an error when more than one bike docked" do
