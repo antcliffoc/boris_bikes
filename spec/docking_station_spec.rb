@@ -51,4 +51,12 @@ describe DockingStation do
     expect { ds.dock_bike(Bike.new)}.to raise_error "Station full!"
   end
 
+  it { should respond_to(:report)}
+
+  it "can set a bike as broken" do
+    bike = bike.new
+    subject.dock_bike(bike, report)
+    expect(bike.working?).to eq(false)
+  end
+
 end
