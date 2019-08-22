@@ -11,16 +11,25 @@ class DockingStation
   end
 
   def release_bike
-    raise "No bikes available" unless !@bike_array.empty?
+    raise "No bikes available" if empty?
     @bike_array[0]
   end
 
   def dock_bike(new_bike)
-    raise "Station full!" unless @bike_array.length < 20
+    raise "Station full!" if full?
     @bike_array.push(new_bike)
   end
 
   def see_bikes
     @bike_array
+  end
+
+  private
+  def full?
+    @bike_array.length == 20
+  end
+
+  def empty?
+    @bike_array.empty?
   end
 end
