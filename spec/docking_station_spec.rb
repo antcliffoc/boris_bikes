@@ -26,22 +26,18 @@ describe DockingStation do
 
   it 'gets bikes' do
     new_bike = Bike.new
-    station = DockingStation.new
-    station.dock_bike(new_bike)
-    expect(station.see_bikes[0]).to eq(new_bike)
+    subject.dock_bike(new_bike)
+    expect(subject.see_bikes[0]).to eq(new_bike)
   end
 
   it "Raise error when no bikes" do
-    station = DockingStation.new
-    expect { station.release_bike }.to raise_error "No bikes available"
+    expect { subject.release_bike }.to raise_error "No bikes available"
   end
 
-  it "Raises an error when more than one bike docked" do
-    station = DockingStation.new
+  it "Raises an error when more than 20 bikes docked" do
     bike = Bike.new
-    another_bike = Bike.new
-    station.dock_bike(bike)
-    expect { station.dock_bike(another_bike)}.to raise_error "Station full!"
+    20.times {subject.dock_bike(Bike.new)}
+    expect { subject.dock_bike(bike)}.to raise_error "Station full!"
   end
 
 end

@@ -16,7 +16,7 @@ class DockingStation
   end
 
   def dock_bike(new_bike)
-    raise "Station full!" unless @bike_array.empty?
+    raise "Station full!" unless @bike_array.length < 20
     @bike_array.push(new_bike)
   end
 
