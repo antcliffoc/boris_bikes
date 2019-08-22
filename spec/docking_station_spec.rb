@@ -7,7 +7,9 @@ describe DockingStation do
   end
 
   it "release_bike" do
-    expect(DockingStation.new).to respond_to(:release_bike)
+    bike = Bike.new
+    subject.dock_bike(bike)
+    expect(subject.release_bike).to be_instance_of Bike
   end
 
   it 'gets a bike' do
