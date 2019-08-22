@@ -12,6 +12,11 @@ describe DockingStation do
     expect(subject.release_bike).to be_instance_of Bike
   end
 
+  it "released up to 20 bikes" do
+    20.times { subject.dock_bike Bike.new }
+    expect(subject.see_bikes.length).to eq 20
+  end
+
   it 'gets a bike' do
     bike = Bike.new
     expect(bike.working?).to be true
