@@ -14,7 +14,7 @@ describe DockingStation do
 
   it "released up to 20 bikes" do
     20.times { subject.dock_bike Bike.new }
-    expect(subject.see_bikes.length).to eq 20
+    expect(subject.see_bikes.length).to eq(DEFAULT_CAPACITY)
   end
 
   it 'gets a bike' do
