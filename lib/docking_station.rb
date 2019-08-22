@@ -9,16 +9,20 @@ class DockingStation
     @bike_array = []
     @capacity = capacity
 
-  end
 
+  end
+  def report(bike)
+    bike.break
+  end
   def release_bike
     raise "No bikes available" if empty?
     @bike_array[0]
   end
 
-  def dock_bike(new_bike)
+  def dock_bike(new_bike, report=false)
     raise "Station full!" if full?
     @bike_array.push(new_bike)
+    report(new_bike) if report
   end
 
   def see_bikes

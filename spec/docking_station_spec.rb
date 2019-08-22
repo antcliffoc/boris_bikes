@@ -54,8 +54,8 @@ describe DockingStation do
   it { should respond_to(:report)}
 
   it "can set a bike as broken" do
-    bike = bike.new
-    subject.dock_bike(bike, report)
+    bike = Bike.new
+    subject.dock_bike(bike)
     expect(bike.working?).to eq(false)
   end
 
