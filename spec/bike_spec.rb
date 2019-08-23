@@ -3,11 +3,11 @@ require './lib/bike'
 describe Bike do
 
   it { should respond_to ("working?") }
-  it { should respond_to ("break") }
+  it { should respond_to ("report") }
 
   context "broken bike" do
     it "is not working" do
-      subject.break
+      subject.report
       expect(subject.working?).to eq(false)
     end
   end

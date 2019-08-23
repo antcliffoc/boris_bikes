@@ -7,7 +7,7 @@ class Bike
     @broken ? false : true
   end
 
-  def break
+  def report
     @broken = true
   end
 

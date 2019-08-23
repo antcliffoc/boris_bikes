@@ -11,9 +11,7 @@ class DockingStation
 
 
   end
-  def report(bike)
-    bike.break
-  end
+
   def release_bike
     raise "No bikes available" if empty?
     @bike_array[0]
@@ -22,7 +20,7 @@ class DockingStation
   def dock_bike(new_bike, report=false)
     raise "Station full!" if full?
     @bike_array.push(new_bike)
-    report(new_bike) if report
+    new_bike.report if report
   end
 
   def see_bikes
