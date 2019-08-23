@@ -8,8 +8,6 @@ class DockingStation
   def initialize(capacity=DEFAULT_CAPACITY)
     @bike_array = []
     @capacity = capacity
-
-
   end
 
   def release_bike
